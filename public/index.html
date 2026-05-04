@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work with JavaScript</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="header__title">Work with JavaScript</h1>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Перемкнути тему"></button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="comments" aria-labelledby="comments-heading">
+      <h2 id="comments-heading" class="section-title">Коментарі</h2>
+      <p class="comments__status" id="commentsStatus" hidden></p>
+      <ul class="comments__list" id="commentsList"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h2 class="footer__title">Дані в localStorage</h2>
+    <div class="footer__storage" id="storageDump"></div>
+  </footer>
+
+  <div class="modal" id="feedbackModal" hidden>
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__header">
+        <h2 id="modalTitle" class="modal__title">Зворотний зв’язок</h2>
+        <button type="button" class="modal__close" id="modalClose" aria-label="Закрити">&times;</button>
+      </div>
+      <form class="feedback-form" id="feedbackForm">
+        <label class="field">
+          <span class="field__label">Ім’я</span>
+          <input class="field__input" type="text" name="name" required autocomplete="name">
+        </label>
+        <label class="field">
+          <span class="field__label">Email</span>
+          <input class="field__input" type="email" name="email" required autocomplete="email">
+        </label>
+        <label class="field">
+          <span class="field__label">Тема</span>
+          <input class="field__input" type="text" name="subject" required>
+        </label>
+        <label class="field">
+          <span class="field__label">Повідомлення</span>
+          <textarea class="field__input field__textarea" name="message" rows="4" required></textarea>
+        </label>
+        <p class="feedback-form__status" id="feedbackStatus" hidden></p>
+        <button type="submit" class="btn btn--primary">Відправити</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
